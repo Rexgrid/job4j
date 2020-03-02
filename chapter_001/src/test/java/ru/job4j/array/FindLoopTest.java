@@ -9,7 +9,7 @@ public class FindLoopTest {
     @Test
     public void whenArrayHas5Then0() {
         FindLoop find = new FindLoop();
-        int[] input = new int[] {5, 10, 3};
+        int[] input = new int[]{5, 10, 3};
         int value = 5;
         int result = find.indexOf(input, value);
         int expect = 0;
@@ -19,7 +19,7 @@ public class FindLoopTest {
     @Test
     public void whenArrayHas3ThenNull() {
         FindLoop find1 = new FindLoop();
-        int[] input = new int[] {2, 7, 8};
+        int[] input = new int[]{2, 7, 8};
         int value = 3;
         int result = find1.indexOf(input, value);
         int expect = -1;
@@ -28,7 +28,7 @@ public class FindLoopTest {
 
     @Test
     public void whenFind3() {
-        int[] input = new int[] {5, 2, 10, 2, 4};
+        int[] input = new int[]{5, 2, 10, 2, 4};
         int value = 2;
         int start = 2;
         int finish = 4;
@@ -38,7 +38,7 @@ public class FindLoopTest {
     }
 
     @Test
-    public void whenFindMinusOne(){
+    public void whenFindMinusOne() {
         int[] input = new int[]{1, 2, 3, 4, 5};
         int value = 7;
         int start = 1;
@@ -47,4 +47,6 @@ public class FindLoopTest {
         int expect = -1;
         assertThat(result, is(expect));
     }
+
+
 }
