@@ -15,7 +15,7 @@ public class CounterTest {
     }
 
     @Test
-    public void WhenSumEvenNumbersFromTenToTwentyThenNinty() {
+    public void whenSumEvenNumbersFromTenToTwentyThenNinty() {
         int rsl = Counter.sumByEven(10, 20);
         int expected = 90;
         assertThat(rsl, is(expected));

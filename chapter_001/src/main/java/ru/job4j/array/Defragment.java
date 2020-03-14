@@ -11,7 +11,9 @@ public class Defragment {
                         array[index] = array[point + 1];
                         array[point + 1] = temp;
                         break;
-                    } else point++;
+                    } else {
+                        point++;
+                    }
                 }
             }
             System.out.print(array[index] + " ");

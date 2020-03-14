@@ -2,15 +2,17 @@ package ru.job4j.calculator;
 
 /**
  * Class Клас для вычесления арифметических операций + - / *
+ *
  * @author Devyatkin
- * @since 20.02.2020
  * @version 1.0
+ * @since 20.02.2020
  */
 
 
 public class Calculator {
     /**
      * Main
+     *
      * @param args - args
      */
     public static void main(String[] args) {
@@ -19,7 +21,7 @@ public class Calculator {
         int four = 4;
         int five = 5;
         int six = 6;
-        int sixDivTwo = six/two;
+        int sixDivTwo = six / two;
         int onePlusTwo = one + two;
         int fiveMinusTwo = five - two;
         int fourTimeTwo = four * two;
