@@ -34,7 +34,7 @@ public class DefragmentTest {
     public void notAllNull() {
         String[] input = {null, null, null};
         String[] compressed = Defragment.compress(input);
-        String[] expected = {null, null, null};K
+        String[] expected = {null, null, null};
         assertThat(compressed, is(expected));
     }
 
