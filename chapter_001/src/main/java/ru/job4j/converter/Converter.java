@@ -6,16 +6,31 @@ public class Converter {
         return rsl;
     }
 
+    /**
+     * Конвертация рублей в доллары
+     * @param value
+     * @return
+     */
     public static int rubleToDollar(int value) {
-        int rsl = value / 60; // формула перевода рублей в доллоры.
+        int rsl = value / 60;
         return rsl;
     }
 
+    /**
+     * Конвертация евро в рубли
+     * @param value
+     * @return
+     */
     public static int euroToRubles(int value) {
         int rsl = value * 70;
         return rsl;
     }
 
+    /**
+     * Конвертация долларов в рубли
+     * @param value
+     * @return
+     */
     public static int dollarToRubles(int value) {
         int rsl = value * 60;
         return rsl;
