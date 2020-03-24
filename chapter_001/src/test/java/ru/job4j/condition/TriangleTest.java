@@ -8,13 +8,22 @@ import static org.junit.Assert.assertThat;
 public class TriangleTest {
     @Test
     public void whenExist() {
-        boolean result = Triangle.exist(2.0, 2.0, 2.0);
-        assertThat(result, is(true));
+        Point first = new Point(13, 1);
+        Point second = new Point(2, 4);
+        Point third = new Point(2, 3);
+        Triangle trg = new Triangle(first, second, third);
+        double result = trg.area();
+        assertThat(result, is(5.49999999999999));
+
     }
 
     @Test
     public void whenNotExist() {
-        boolean result = Triangle.exist(4, 1, 2);
-        assertThat(result, is(false));
+        Point first = new Point(0, 0);
+        Point second = new Point(0, 0);
+        Point third = new Point(0, 0);
+        Triangle trg = new Triangle(first, second, third);
+        double result = trg.area();
+        assertThat(result, is(-1.0));
     }
 }
