@@ -23,4 +23,16 @@ public class MaxTest {
         int result = Max.max(2, 2);
         assertThat(result, is(2));
     }
+
+    @Test
+    public void whenMax3to1to0Then3() {
+        int result = Max.max(0, 1, 3);
+        assertThat(result, is(3));
+    }
+
+    @Test
+    public void whenMax5to1to3to6Then6() {
+        int result = Max.max(5, 1, 3, 6);
+        assertThat(result, is(6));
+    }
 }
