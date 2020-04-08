@@ -33,7 +33,7 @@ public class Library {
         System.out.println("Вывод книг с названием Clean Code");
         for (int index = 0; index < book.length; index++) {
             Book bk = book[index];
-            if (bk.getName() == "Clean Code") {
+            if (bk.getName().equals("Clean Code")) {
                 System.out.println(bk.getName() + " количество страниц: " + bk.getPageCount());
             }
         }
