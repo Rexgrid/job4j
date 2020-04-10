@@ -26,7 +26,6 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-
         return Arrays.copyOf(items, position);
     }
 
