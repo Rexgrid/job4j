@@ -38,13 +38,18 @@ public class StartUI {
         System.out.println("======== Показать все заявки ========");
         Item[] item = tracker.findAll();
         for (Item value : item) {
-            System.out.println(value);
+            if (item != null) {
+                System.out.println(value);
+            } else {
+                 System.out.println("Заявки не найдены. Добавьте заявку.");
+            }
         }
-    }
+        }
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("======== Редактировать заявку ========");
         String id = input.askStr("Введите Id заявки: ");
-        Item item = new Item("new");
+        String name = input.askStr("Введите новое имя заявки: ");
+        Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("Операция выполнена " + item.getId() + " " + item.getName());
         } else {
