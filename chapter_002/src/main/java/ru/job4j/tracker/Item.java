@@ -12,7 +12,7 @@ public class Item {
 
     @Override
     public String toString() {
-        return "Заявка : " + "id: '" + id + '\'' + ", имя: '" + name + '\'';
+        return "id заявки : '" + id + '\'' + ", имя заявки: '" + name + '\'';
     }
 
     public String getId() {

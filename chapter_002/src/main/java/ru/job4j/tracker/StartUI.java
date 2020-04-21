@@ -32,7 +32,8 @@ public class StartUI {
         System.out.println("=== Добавить заявку ====");
         String name = input.askStr("Введите имя заявки: ");
         Item item = new Item(name);
-        System.out.println("Заявка " + tracker.add(item).getName() + " добавлена. ID заявки: " + tracker.add(item).getId());
+        tracker.add(item).getId();
+        System.out.println(item);
     }
     public static void showAll(Input input, Tracker tracker) {
         System.out.println("======== Показать все заявки ========");
@@ -51,7 +52,7 @@ public class StartUI {
         String name = input.askStr("Введите новое имя заявки: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
-            System.out.println("Операция выполнена " + item.getId() + " " + item.getName());
+            System.out.println(item);
         } else {
             System.out.println("Заявка не найдена");
         }
@@ -70,7 +71,7 @@ public class StartUI {
         String id = input.askStr("Введите Id заявки: ");
         Item item = tracker.findById(id);
         if (id != null) {
-            System.out.println("Заявка " + item.getName() + " Id:" + item.getId() + " найдена.");
+            System.out.println(item);
         } else {
             System.out.println("Заявка не найдена, введите корректный Id.");
         }
