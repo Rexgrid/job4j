@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
 
-
-
 public class StartUI {
 
     public void init(Input input, Tracker tracker) {
@@ -13,15 +11,15 @@ public class StartUI {
             if (select == 0) {
                 StartUI.addItem(input, tracker);
             } else if (select == 1) {
-              StartUI.showAll(input, tracker);
+                StartUI.showAll(input, tracker);
             } else if (select == 2) {
                 StartUI.editItem(input, tracker);
             } else if (select == 3) {
-              StartUI.deleteItem(input, tracker);
+                StartUI.deleteItem(input, tracker);
             } else if (select == 4) {
-              StartUI.findById(input, tracker);
+                StartUI.findById(input, tracker);
             } else if (select == 5) {
-             StartUI.findByName(input, tracker);
+                StartUI.findByName(input, tracker);
             } else if (select == 6) {
                 run = false;
             }
@@ -35,17 +33,15 @@ public class StartUI {
         tracker.add(item).getId();
         System.out.println(item);
     }
+
     public static void showAll(Input input, Tracker tracker) {
         System.out.println("======== Показать все заявки ========");
         Item[] item = tracker.findAll();
         for (Item value : item) {
-            if (item != null) {
-                System.out.println(value);
-            } else {
-                 System.out.println("Заявки не найдены. Добавьте заявку.");
-            }
+            System.out.println(value);
         }
-        }
+    }
+
     public static void editItem(Input input, Tracker tracker) {
         System.out.println("======== Редактировать заявку ========");
         String id = input.askStr("Введите Id заявки: ");
@@ -57,6 +53,7 @@ public class StartUI {
             System.out.println("Заявка не найдена");
         }
     }
+
     public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("======== Удаление заявки ========");
         String id = input.askStr("Введите Id Заявки: ");
@@ -66,6 +63,7 @@ public class StartUI {
             System.out.println("======== Заявка не найдена ========");
         }
     }
+
     public static void findById(Input input, Tracker tracker) {
         System.out.println("======== Поиск заявки по Id ========");
         String id = input.askStr("Введите Id заявки: ");
@@ -76,6 +74,7 @@ public class StartUI {
             System.out.println("Заявка не найдена, введите корректный Id.");
         }
     }
+
     public static void findByName(Input input, Tracker tracker) {
         System.out.println("======== Поиск заявки по имени ========");
         String key = input.askStr("Введите имя заявки: ");
