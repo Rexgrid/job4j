@@ -70,7 +70,7 @@ public class StartUI {
         System.out.println("======== Поиск заявки по Id ========");
         String id = input.askStr("Введите Id заявки: ");
         Item item = tracker.findById(id);
-        if (id != null) {
+        if (item != null) {
             System.out.println(item);
         } else {
             System.out.println("Заявка не найдена, введите корректный Id.");
