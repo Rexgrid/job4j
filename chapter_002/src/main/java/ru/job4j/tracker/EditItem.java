@@ -13,7 +13,7 @@ public class EditItem implements UserAction {
         String name = input.askStr("Введите новое имя заявки: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
-            System.out.println(item);
+            System.out.println("Заявка изменена");
         } else {
             System.out.println("Заявка не найдена");
         }
