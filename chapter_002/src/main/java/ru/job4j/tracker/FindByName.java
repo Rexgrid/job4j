@@ -12,7 +12,7 @@ public class FindByName implements UserAction {
         String key = input.askStr("Введите имя заявки: ");
         Item[] item = tracker.findByName(key);
         for (Item value : item) {
-            System.out.println(value);
+            System.out.println(" " + value + " найдена.");
         }
         return true;
     }
