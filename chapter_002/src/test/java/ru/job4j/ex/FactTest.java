@@ -5,9 +5,8 @@ import org.junit.Test;
 
 public class FactTest {
 
-
     @Test(expected = IllegalArgumentException.class)
     public void whenNLess0ThenIAE() {
-    Fact.calc(-1);
-}
+        Fact.calc(-1);
+    }
 }
