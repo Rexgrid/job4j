@@ -14,7 +14,6 @@ public class FindById implements UserAction {
             System.out.println(item);
         } else {
             System.out.println("Введите корректный Id ");
-
         }
         return true;
     }

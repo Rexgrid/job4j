@@ -1,6 +1,5 @@
 package ru.job4j.ex;
 
-import ex.Fact;
 import org.junit.Test;
 
 public class FactTest {
