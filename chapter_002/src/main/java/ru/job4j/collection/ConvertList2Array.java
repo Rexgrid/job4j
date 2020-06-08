@@ -16,8 +16,6 @@ public class ConvertList2Array {
                 row++;
                 array[row][cell] = num;
                 cell++;
-            } else {
-                array[row][cell] = 0;
             }
         }
         return array;
