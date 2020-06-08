@@ -1,5 +1,6 @@
 package ru.job4j.tracker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -52,7 +53,7 @@ public class Tracker {
         int index = indexOf(id);
         item.setId(id);
         if (index != -1) {
-            items[index] = item;
+            //items[index] = item;
             result = true;
         }
         return result;
