@@ -1,4 +1,4 @@
-package ru.job4j.pojo.tracker;
+/*package ru.job4j.pojo.tracker;
 
 import org.junit.Test;
 import ru.job4j.tracker.Item;
@@ -76,3 +76,5 @@ public class TrackerTest {
     }
 
 }
+
+ */
