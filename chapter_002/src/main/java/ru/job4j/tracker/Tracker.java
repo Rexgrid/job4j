@@ -37,12 +37,11 @@ public class Tracker {
 
     public boolean replace(String id, Item item) {
         boolean result = false;
-        item.setId(id);
         int ind = indexOf(id);
         if (ind != -1) {
+            item.setId(id);
             result = true;
-           items.remove(ind);
-           items.add(ind, item);
+           items.set(ind, item);
         }
                return result;
     }
