@@ -1,7 +1,6 @@
 package ru.job4j.collections;
 
 
-import org.junit.Assert;
 import org.junit.Test;
 import ru.job4j.collection.*;
 
@@ -36,7 +35,7 @@ public class JobTest {
 
     @Test
     public void whenCompatorByNameRevers() {
-        Comparator<Job> job = new JobDescByNameRevers();
+        Comparator<Job> job = new JobAscByName();
             int rsl = job.compare(
                     new Job("Task1", 1),
                     new Job("Task", 2)
@@ -54,7 +53,7 @@ public class JobTest {
      }
      @Test
     public void whenCompatorByPriorityRevers() {
-        Comparator<Job> job = new JobDescByPriorityRevers();
+        Comparator<Job> job = new JobAscByPriority();
         int rsl = job.compare(
                 new Job("task", 1),
                 new Job("task1", 2)
