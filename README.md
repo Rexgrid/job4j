@@ -1,11 +1,1 @@
-# job4j
-
-Репозиторий курса Job4j
-Курс начат в феврале 2020 года, планирую окончить курс в апреле 2020 года
-
-Объединение зафиксированных изменений
-
-
-В курсе производилась работа с ветками git
-
-Создание ветки из IDEA
+[![Build Status](https://travis-ci.org/Rexgrid/job4j.svg?branch=master)](https://travis-ci.org/Rexgrid/job4j)
