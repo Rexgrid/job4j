@@ -1,10 +1,14 @@
 package ru.job4j.collections;
 
+import org.hamcrest.core.Is;
 import org.junit.Test;
 import ru.job4j.collection.Departments;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
+import java.util.StringJoiner;
+
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 

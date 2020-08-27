@@ -7,7 +7,7 @@ import static java.util.Comparator.naturalOrder;
 public class Departments {
 
     public static List<String> fillGaps(List<String> deps) {
-        HashSet<String> tmp = new HashSet<>();
+        Set<String> tmp = new TreeSet<>();
         for (String value : deps) {
             String start = "";
             for (String el : value.split("/")) {
@@ -20,16 +20,15 @@ public class Departments {
                 }
             }
         }
-        TreeSet sortedTree = new TreeSet();
-        sortedTree.addAll(tmp);
-        return new ArrayList<>(sortedTree);
+        return new ArrayList<>(tmp);
     }
 
 
     public static void sortAsc(List<String> orgs) {
-        Collections.sort(orgs);
+        orgs.sort(naturalOrder());
     }
 
     public static void sortDesc(List<String> orgs) {
+        orgs.sort(new DepDescComp());
     }
 }
