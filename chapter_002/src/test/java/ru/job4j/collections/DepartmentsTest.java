@@ -40,9 +40,9 @@ public class DepartmentsTest {
 
     @Test
     public void whenDescSorted() {
-        List<String> input = Arrays.asList("K2", "K2/SK1", "K2/SK1/SSK2");
+        List<String> input = Arrays.asList("K1", "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2", "K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2");
         Departments.sortDesc(input);
-        List<String> expected = Arrays.asList("K2/SK1/SSK2", "K2/SK1", "K2");
+        List<String> expected = Arrays.asList("K2", "K2/SK1", "K2/SK1/SSK1", "K2/SK1/SSK2", "K1", "K1/SK1", "K1/SK1/SSK1", "K1/SK1/SSK2", "K1/SK2");
         assertThat(input, is(expected));
     }
 }
