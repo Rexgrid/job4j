@@ -5,7 +5,7 @@ import java.util.Objects;
 public class Address {
     private String city;
 
-    public String getCity() {
+    public  String getCity() {
         return city;
     }
 
