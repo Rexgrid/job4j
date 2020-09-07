@@ -13,6 +13,6 @@ public class School {
     }
 
     Map<String, Student> students(List<Student> student) {
-        return  student.stream().distinct().collect(Collectors.toMap(Student::getSurname, e -> e, ((student1, student2) -> student1.getScore() > student2.getScore() ? student1 : student2)));
+        return  student.stream().collect(Collectors.toMap(Student::getSurname, e -> e, ((student1, student2) -> student1.getScore() > student2.getScore() ? student1 : student2)));
     }
 }
