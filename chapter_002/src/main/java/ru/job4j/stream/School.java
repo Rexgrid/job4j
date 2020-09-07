@@ -1,7 +1,5 @@
 package ru.job4j.stream;
 
-import ru.job4j.collection.LexSort;
-
 import java.util.List;
 import java.util.Map;
 import java.util.function.Predicate;
