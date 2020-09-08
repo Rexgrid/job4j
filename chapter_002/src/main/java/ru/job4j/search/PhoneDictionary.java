@@ -19,13 +19,13 @@ public class PhoneDictionary {
 
 
     public ArrayList<Person> find(String key) {
-        Predicate<Person> combineName = s -> s.getName().equals(key);
+        Predicate<Person>  combineName = s -> s.getName().equals(key);
         Predicate<Person> combineSurname = s -> s.getSurname().equals(key);
         Predicate<Person> combineAddress = s -> s.getAddress().equals(key);
         Predicate<Person> combinePhone = s -> s.getPhone().equals(key);
         Predicate<Person> combine = combineAddress.or(combineName.or(combinePhone.or(combineSurname)));
         ArrayList<Person> result = new ArrayList<>();
-        for (Person person : persons) {
+        for (var person : persons) {
             if (combine.test(person)) {
                 result.add(person);
             }
@@ -33,3 +33,5 @@ public class PhoneDictionary {
         return result;
     }
 }
+
+ //
