@@ -21,7 +21,7 @@ public void extractNumber() {
            new Task("2", "Second task"),
            new Task("1", "First Task")
    );
-   Set<String> expected = new HashSet<>(Arrays.asList("1", "2"));
+   Set<String> expected = new HashSet<>(List.of("1", "2"));
    assertThat(FullSearch.extractNumber(tasks), is(expected));
    }
 }

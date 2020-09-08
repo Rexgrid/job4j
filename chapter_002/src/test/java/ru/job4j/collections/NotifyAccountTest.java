@@ -21,7 +21,7 @@ public class NotifyAccountTest {
                 new Account("142", "Petr Arsentev", "000001")
         );
         HashSet<Account> expect = new HashSet<>(
-                Arrays.asList(
+                List.of(
                         new Account("123", "Petr Arsentev", "eDer3432f"),
                         new Account("142", "Petr Arsentev", "000001")
                 )
@@ -37,7 +37,7 @@ public class NotifyAccountTest {
                 new Account("23113", "Dansel", "14s8QQ")
         );
         HashSet<Account> expect = new HashSet<>(
-                Arrays.asList(
+                List.of(
                         new Account("1111", "Andrew", "a123d"),
                         new Account("23113", "Dansel", "14s8QQ")
                 )
