@@ -10,7 +10,6 @@ public class Pupil {
         this.name = name;
         this.subjects = subjects;
     }
-
     public String getName() {
         return name;
     }
@@ -18,4 +17,6 @@ public class Pupil {
     public List<Subject> getSubjects() {
         return subjects;
     }
+
+
 }
