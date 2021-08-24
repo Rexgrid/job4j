@@ -6,6 +6,6 @@ import java.util.Comparator;
 public class SortById implements Comparator<Item> {
     @Override
     public int compare(Item first, Item second) {
-        return first.getId().compareTo(second.getId());
+        return Integer.compare(first.getId(),second.getId());
     }
 }

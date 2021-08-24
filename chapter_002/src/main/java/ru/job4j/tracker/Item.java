@@ -1,36 +1,51 @@
 package ru.job4j.tracker;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Comparator;
 import java.util.Objects;
 
 public class Item implements Comparable<Item> {
-    private String id;
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    private static final DateTimeFormatter FORMATTER =
+            DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+
+    private int id;
     private String name;
+    private LocalDateTime created = LocalDateTime.now();
 
     public Item(String name) {
         this.name = name;
     }
 
-    public Item(String name, String id) {
+    public Item(String name, int id) {
         this.name = name;
         this.id = id;
     }
 
     @Override
     public String toString() {
-        return "id заявки : '" + id + '\'' + ", имя заявки: '" + name + '\'';
+        return String.format("id: %s, name: %s, created: %s", id, name, FORMATTER.format(created));
     }
 
     @Override
     public boolean equals(Object obj) {
-       boolean result  = super.equals(obj);
-       if (obj instanceof Item) {
-           Item item = (Item) obj;
-           if (this.name.equals(item.name) && this.id.equals(item.id)) {
-               result = true;
-           }
-       }
-       return result;
+        boolean result = super.equals(obj);
+        if (obj instanceof Item) {
+            Item item = (Item) obj;
+            if (this.name.equals(item.name) && this.id == item.id) {
+                result = true;
+            }
+        }
+        return result;
     }
 
     @Override
@@ -40,14 +55,14 @@ public class Item implements Comparable<Item> {
 
     @Override
     public int compareTo(Item another) {
-        return this.id.compareTo(another.getId());
+        return Integer.compare(this.id, another.getId());
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 

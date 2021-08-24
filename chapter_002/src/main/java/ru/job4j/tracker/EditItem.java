@@ -8,8 +8,8 @@ public class EditItem implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
-        String id = input.askStr("Введите Id заявки: ");
+    public boolean execute(Input input, Store tracker) {
+        int id = input.askInt("Введите Id заявки: ");
         String name = input.askStr("Введите новое имя заявки: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {

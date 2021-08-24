@@ -6,7 +6,7 @@ public class ShowAllItem implements UserAction {
        return "======== Показать все заявки ========";
    }
         @Override
-       public boolean execute(Input input, Tracker tracker) {
+       public boolean execute(Input input, Store tracker) {
             for (Item item : tracker.findAll()) {
                 System.out.println(" " + item + " ");
             }

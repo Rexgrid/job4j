@@ -5,7 +5,7 @@ import java.util.List;
 
 public class StartUI {
 
-    public void init(Input input, Tracker tracker, List<UserAction> actions) {
+    public void init(Input input, Store tracker, List<UserAction> actions) {
         boolean run = true;
         while (run) {
             showMenu(actions);
@@ -23,18 +23,20 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        Input input = new ConsoleInput();
-        Input validate = new ValidateInput(input);
-        Tracker tracker = new Tracker();
-        List<UserAction> actions = new ArrayList<>();
-        actions.add(new CreateItem());
-        actions.add(new ShowAllItem());
-        actions.add(new EditItem());
-        actions.add(new DeleteItem());
-        actions.add(new FindById());
-        actions.add(new FindByName());
-        actions.add(new Exit());
-
-        new StartUI().init(validate, tracker, actions);
+        Input input = new ValidateInput(new ConsoleInput());
+        try (Store tracker = new SqlTracker()) {
+            tracker.init();
+            List<UserAction> actions = new ArrayList<>();
+            actions.add(new CreateItem());
+            actions.add(new ShowAllItem());
+            actions.add(new EditItem());
+            actions.add(new DeleteItem());
+            actions.add(new FindById());
+            actions.add(new FindByName());
+            actions.add(new Exit());
+            new StartUI().init(input, tracker, actions);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

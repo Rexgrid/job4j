@@ -1,18 +1,45 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
-public class Tracker {
+public class MemTracker implements Store{
 
     private final List<Item> items = new ArrayList<>();
+
+    @Override
+    public void init() {
+        MemTracker memTracker = new MemTracker();
+    }
 
     public Item add(Item item) {
         item.setId(generateId());
         items.add(item);
         return item;
+    }
+
+    @Override
+    public boolean replace(int id, Item item) {
+        boolean result = false;
+        int ind = indexOf(id);
+        if (ind != -1) {
+            item.setId(id);
+            result = true;
+            items.set(ind, item);
+        }
+        return result;
+    }
+
+    @Override
+    public boolean delete(int id) {
+        boolean rsl = false;
+        int ind = indexOf(id);
+        if (ind != -1) {
+            items.remove(ind);
+            rsl = true;
+        }
+        return rsl;
     }
 
     public List<Item> findAll() {
@@ -29,27 +56,16 @@ public class Tracker {
         return rsl;
     }
 
-
-    public Item findById(String id) {
+    @Override
+       public Item findById(int id) {
         int index = indexOf(id);
         return index != -1 ? items.get(index) : null;
     }
 
-    public boolean replace(String id, Item item) {
-        boolean result = false;
-        int ind = indexOf(id);
-        if (ind != -1) {
-            item.setId(id);
-            result = true;
-           items.set(ind, item);
-        }
-               return result;
-    }
-
-    private int indexOf(String id) {
+    private int indexOf(int id) {
         int rsl = -1;
         for (int index = 0; index < items.size(); index++) {
-            if (items.get(index).getId().equals(id)) {
+            if (items.get(index).getId() == id) {
                 rsl = index;
                 break;
             }
@@ -57,15 +73,6 @@ public class Tracker {
         return rsl;
     }
 
-    public boolean delete(String id) {
-        boolean rsl = false;
-        int ind = indexOf(id);
-        if (ind != -1) {
-            items.remove(ind);
-            rsl = true;
-        }
-        return rsl;
-    }
 
 
     /**
@@ -74,10 +81,14 @@ public class Tracker {
      *
      * @return Уникальный ключ.
      */
-    private String generateId() {
+    private int generateId() {
         Random rm = new Random();
-        return String.valueOf(rm.nextLong() + System.currentTimeMillis());
+        return (int) (rm.nextLong() + System.currentTimeMillis());
     }
 
 
+    @Override
+    public void close() throws Exception {
+
+    }
 }

@@ -6,7 +6,7 @@ public class CreateItem implements UserAction {
         return "=== Добавить заявку ====";
     }
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         String name = input.askStr("Введите имя заявки: ");
         Item item = new Item(name);
         tracker.add(item).getId();

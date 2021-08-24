@@ -10,7 +10,7 @@ public class FindByName implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store tracker) {
         String key = input.askStr("Введите имя заявки: ");
         List<Item> item = tracker.findByName(key);
         for (Item value : item) {
