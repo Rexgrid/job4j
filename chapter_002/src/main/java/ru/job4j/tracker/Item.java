@@ -36,16 +36,17 @@ public class Item implements Comparable<Item> {
         return String.format("id: %s, name: %s, created: %s", id, name, FORMATTER.format(created));
     }
 
+
     @Override
-    public boolean equals(Object obj) {
-        boolean result = super.equals(obj);
-        if (obj instanceof Item) {
-            Item item = (Item) obj;
-            if (this.name.equals(item.name) && this.id == item.id) {
-                result = true;
-            }
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
         }
-        return result;
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Item item = (Item) o;
+        return id == item.id && Objects.equals(name, item.name);
     }
 
     @Override
