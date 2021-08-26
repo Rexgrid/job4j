@@ -12,10 +12,11 @@ public class Converter {
             }
         }
         if (count % 3 == 0) {
-            temp = new int[count / 3][count / 3];
-            } else {
+            int a = count / 3;
+            temp = new int[a][a];
+        } else {
             temp = new int[array.length][array.length];
-            }
+        }
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 temp[row][cell] = array[i][j];
