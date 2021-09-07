@@ -16,6 +16,7 @@ import java.util.Properties;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertThat;
 
 public class SqlTrackerTest {
@@ -65,15 +66,19 @@ public class SqlTrackerTest {
         Item item1 = new Item("origin name");
         Item item2 = new Item("changed name");
         tracker.add(item1);
-        assertThat(tracker.replace(item1.getId(), item2), is(true));
+        int id = item1.getId();
+        tracker.replace(id, item2);
+        assertThat(tracker.findById(id).getName(), is("changed name"));
     }
 
     @Test
     public void whenDeleteItemThanHaveTrue() {
         SqlTracker tracker = new SqlTracker(connection);
         Item item = new Item("test");
+        int id = item.getId();
         tracker.add(item);
-        assertThat(tracker.delete(item.getId()), is(true));
+        tracker.delete(id);
+       assertNull(tracker.findById(id));
     }
 
     @Test
